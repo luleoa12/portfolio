@@ -3,9 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
   width: 100vw;
-  margin-top: -50px;
+  padding-top: 150px;
 }
 
 .hero-card__container {

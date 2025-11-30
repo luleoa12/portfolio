@@ -1,6 +1,6 @@
-/* Base Styles */
+
 :root {
-    /* Map to base.css variables */
+
     --primary: var(--accent);
     --primary-dark: var(--accent-muted);
     --dark: var(--bg-elevated);
