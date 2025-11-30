@@ -1,0 +1,217 @@
+/* Projects */
+.github-link {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+
+
+.projects-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, 390px); 
+  justify-content: center; 
+  gap: 20px; 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+.project-card { 
+  border-radius: 12px; 
+  border: 1px solid var(--border); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
+  overflow: hidden; 
+  width: 100%; 
+  height: 95%; 
+  margin: 0; 
+  padding: 1.5rem; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), inset 0 -40px 30px -20px var(--accent-muted); 
+}
+
+.project-card:hover { 
+  background-color: var(--surface-hover); 
+  transition: background-color 0.3s ease, transform 0.5s ease; 
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.discover-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 0.5rem; background:
+  transparent; color: var(--text-primary); 
+  border: 1px solid var(--text-primary); 
+  border-radius: 6px; 
+  padding: 0.2rem 0.7rem; 
+  font-size: 0.9rem; 
+  font-weight: 500; 
+  text-decoration: none; 
+  transition: all 0.2s ease; 
+  white-space: nowrap; }
+
+.discover-btn svg {
+  transition: transform 0.4s ease;
+}
+
+.discover-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.project-media {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.project-title { font-size: 1.5rem; font-weight: 600; margin: 0; color: var(--text-primary); }
+
+.project-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag { 
+  padding: 0.25rem 0.5rem; 
+  background-color: var(--chip-bg); 
+  border-radius: 6px; 
+  font-size: 0.675rem; 
+  font-weight: 500; 
+  color: var(--chip-text); 
+}
+
+.project-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.project-link:hover {
+  transform: translateX(6px);
+}
+
+.project-ctas {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  text-decoration: none;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.cta-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.cta-btn svg {
+  opacity: 0.9;
+}
+
+/* Project Detail */
+.project-hero {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.project-hero img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 2 / 1;
+}
+
+.project-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+}
+
+.project-hero-title {
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.project-hero-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+}
+
+.detail-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.detail-list {
+  padding-left: 1.25rem;
+}
+
+.detail-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,145 @@
+/* Teaching */
+.teaching-content {
+  max-width: 800px;
+  width: 100%;
+  margin: 2.5rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 500px 250px;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.teaching-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2.25rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.teaching-role {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.teaching-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.highlight-icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent-muted);
+  color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.teaching-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.teaching-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.teaching-subtitle {
+  font-size: 1.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 260px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, var(--accent-muted), transparent 55%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover::after {
+  opacity: 1;
+}
+
+.testimonial-quote {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+.testimonial-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.testimonial-meta h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-meta p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.testimonial-badge {
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  background-color: var(--accent-muted);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .teaching-content {
+    grid-template-columns: 1fr;
+  }
+}

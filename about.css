@@ -1,0 +1,111 @@
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  margin-top: -40px;
+  width: 100vw;
+}
+
+.hero-card__container {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 2px 32px 0 rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero-card__header {
+  display: flex;
+  margin-top: -20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-card__name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hero-card__icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.hero-card__icon {
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.hero-card__icon:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.hero-card__icon svg { stroke: var(--text-primary); }
+
+[data-theme="dark"] .hero-card__icon { background: rgba(255,255,255,0.04); border: none; }
+[data-theme="dark"] .hero-card__icon:hover { background: rgba(255,255,255,0.12); }
+
+[data-theme="light"] .hero-card__icon, .light-mode .hero-card__icon { background: rgba(0,0,0,0.06); border: none; }
+[data-theme="light"] .hero-card__icon:hover, .light-mode .hero-card__icon:hover { background: rgba(0,0,0,0.12); }
+
+.hero-card__location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-top: -25px;
+}
+
+.hero-card__location-text {
+  color: var(--text-secondary);
+}
+
+.hero-card__desc {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%);
+  filter: blur(40px);
+  z-index: 0;
+  animation: pulse 12s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .hero::after {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05), transparent 60%);
+}
