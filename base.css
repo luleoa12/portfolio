@@ -304,7 +304,7 @@ body {
 .section-title {
   font-size: 15px;
   font-weight: 300;
-  text-align: center;
+  text-align: left;
   color: var(--section-title-color);
   background-color: var(--section-title-bg);
   position: relative;
@@ -312,10 +312,15 @@ body {
   width: fit-content;
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
-  margin-left: 200px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: max(1rem, calc((100vw - 800px) / 2));
 }
 
-/* Buttons */
+@media (max-width: 820px) {
+  .section-title { margin-left: 1rem; }
+}
+
 .btn {
   display: inline-block;
   padding: 0.9rem 2.25rem;

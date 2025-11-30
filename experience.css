@@ -1,7 +1,7 @@
 .experience-card__container {
   max-width: 800px;
   width: 100%;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 0rem auto;
 }
 
 .timeline-panel {
@@ -32,6 +32,10 @@
 
 .timeline-content.active {
   display: block;
+}
+
+.timeline-bullets {
+  margin-left: 15px;
 }
 
 .timeline-item {
