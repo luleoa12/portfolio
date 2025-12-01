@@ -297,8 +297,9 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .section-title {
@@ -314,7 +315,6 @@ body {
   border-radius: 8px;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  margin-left: max(1rem, calc((100vw - 800px) / 2));
 }
 
 @media (max-width: 800px) {
