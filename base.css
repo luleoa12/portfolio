@@ -22,7 +22,7 @@
   --gradient-start: #040404;
   --gradient-mid: #070707;
   --gradient-end: #0b0b0b;
-    --transition: all 0.3s ease-in-out;
+    --transition: all 0.2s ease-in-out;
     --grid-color: rgba(255, 255, 255, 0.012);
     --accent-warm: #f5b300;
     --accent-warm-dark: #d29900;
@@ -135,7 +135,6 @@ body {
   z-index: 1;
 }
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -464,7 +463,6 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
