@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Leo Lu</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "./js/modules/theme.js": "./js/modules/theme.js",
+                "./js/modules/navigation.js": "./js/modules/navigation.js",
+                "./js/modules/tabs.js": "./js/modules/tabs.js",
+                "./js/modules/form.js": "./js/modules/form.js",
+                "./js/modules/animations.js": "./js/modules/animations.js"
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Leo Lu</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="#" class="nav-link active">Projects</a></li>
+                <li><a href="index.html#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <div class="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 6rem;">
+        <div class="section-header" style="max-width: 1200px;">
+            <h1 class="section-title">All Projects</h1>
+            <a href="index.html" class="view-more-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(180deg); margin-right: 0.5rem;">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <div class="projects-grid" style="max-width: 1200px; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="assets/project_img/makecore/makecore_dark.png" alt="MakeCore" class="dark-image">
+                    <img src="assets/project_img/makecore/makecore_light.png" alt="MakeCore" class="light-image">
+                </div>
+                <div class="project-header">
+                    <h3 class="project-title">MakeCore</h3>
+                    <a href="./projects/makecore.html" class="discover-btn">
+                        Discover
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="project-description">An online platform for sharing and reviewing MakeCode and Scratch projects, featuring studios, game contests, and community interaction.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JS</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Supabase</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="assets/project_img/portfolio/portfolio_light.png" alt="Portfolio" class="light-image">
+                    <img src="assets/project_img/portfolio/portfolio_dark.png" alt="Portfolio" class="dark-image">
+                </div>
+                <div class="project-header">
+                    <h3 class="project-title">Portfolio</h3>
+                    <a href="#" class="discover-btn">
+                        View
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="project-description">A fast and lightweight portfolio site optimized for performance and responsive design with simplicity and modern aesthetics.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JS</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

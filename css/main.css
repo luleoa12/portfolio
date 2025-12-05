@@ -1,0 +1,10 @@
+
+@import "./base/variables.css";
+@import "./pages/base.css";
+@import "./pages/about.css";
+@import "./pages/achievements.css";
+@import "./pages/contact.css";
+@import "./pages/experience.css";
+@import "./pages/projects.css";
+@import "./pages/skills.css";
+/* @import "./pages/teaching.css"; */
