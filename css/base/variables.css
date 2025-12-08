@@ -1,6 +1,5 @@
-/* Color and Theme Variables */
+
 :root {
-  /* Dark Theme (Default) */
   --bg-deep: #050505;
   --bg-elevated: #0a0a0a;
   --bg-card: #0b0b0b;
@@ -46,7 +45,6 @@
   --section-title-bg: #363636;
   --achievement-flash-color: rgba(255, 255, 255, 0.10);
 
-  /* Light Theme */
   &[data-theme="light"], &.light-mode {
     --bg-deep: #ffffff;
     --bg-elevated: #f7f9fb;
@@ -80,14 +78,12 @@
   }
 }
 
-/* Light mode specific styles */
 .light-mode *,
 .light-mode *::before,
 .light-mode *::after {
   box-shadow: none !important;
 }
 
-/* HTML and Body base styles */
 html {
   scroll-behavior: smooth;
   min-height: 100%;
