@@ -60,11 +60,11 @@
 }
 
 .icon-text-separator:hover {
-    color: var(--accent-color); 
+    color: var(--rail-color); 
 }
 
 .icon-text-separator:hover svg {
-    color: white;
+    color: var(--rail-color);
 }
 
 
@@ -150,10 +150,10 @@
 }
 
 .website-link:hover{
-    color: var(--accent-color);
+    color: var(--rail-color);
 }
 .meta-item svg, .icon-small:hover {
-    stroke: white;
+    stroke: var(--rail-color);
 }
 
 .project-description li {
