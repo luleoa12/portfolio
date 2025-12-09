@@ -54,7 +54,10 @@
         </div>
     </nav>
 
-    <a style="display: none; visibility: hidden;" href="https://hits.sh/luleoa12.github.io/portfolio/"><img alt="Hits" src="https://hits.sh/luleoa12.github.io/portfolio.svg"/></a>
+    <a id="hit-counter" style="display: none; visibility: hidden;"
+        href="https://hits.sh/luleoa12.github.io/portfolio/">
+        <img alt="Hits" src="https://hits.sh/luleoa12.github.io/portfolio.svg"/>
+    </a>
 
     <section id="home" class="hero-card" style="width: 800px; margin: 0 auto;">
         <div class="hero-card__container">
@@ -464,5 +467,14 @@
         gtag('config', 'G-ETRG6FLYZF');
     </script>
     <script type="module" src="js/main.js"></script>
+
+    <script>
+        const localHosts = ["localhost", "127.0.0.1", "::1", "[::]"];
+
+        if (!localHosts.includes(window.location.hostname)) {
+            document.getElementById("hit-counter").style.display = "inline";
+        }
+    </script>
+
 </body>
 </html>
