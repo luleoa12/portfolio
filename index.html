@@ -54,10 +54,7 @@
         </div>
     </nav>
 
-    <a id="hit-counter" style="display: none; visibility: hidden;"
-        href="https://hits.sh/luleoa12.github.io/portfolio/">
-        <img alt="Hits" src="https://hits.sh/luleoa12.github.io/portfolio.svg"/>
-    </a>
+    <div id="hit-counter-container"></div>
 
     <section id="home" class="hero-card" style="width: 800px; margin: 0 auto;">
         <div class="hero-card__container">
@@ -469,10 +466,14 @@
     <script type="module" src="js/main.js"></script>
 
     <script>
-        const localHosts = ["localhost", "127.0.0.1", "::1", "[::]"];
+        const isProduction = location.hostname === "luleoa12.github.io";
 
-        if (!localHosts.includes(window.location.hostname)) {
-            document.getElementById("hit-counter").style.display = "inline";
+        if (isProduction) {
+            document.getElementById("hit-counter-container").innerHTML = `
+                <a href="https://hits.sh/luleoa12.github.io/portfolio/">
+                    <img alt="Hits" src="https://hits.sh/luleoa12.github.io/portfolio.svg">
+                </a>
+            `;
         }
     </script>
 
