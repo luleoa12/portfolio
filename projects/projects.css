@@ -156,6 +156,10 @@
     stroke: white;
 }
 
-li {
+.project-description li {
     margin-bottom: 10px;
+}
+
+.nav-menu li {
+    margin-bottom: 0;
 }
