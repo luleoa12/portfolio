@@ -80,6 +80,10 @@
   min-height: 120px;
 }
 
+.contact-form .btn-primary {
+  cursor: pointer;
+}
+
 .socials {
   align-self: flex-start;
   margin-top: 10px;
