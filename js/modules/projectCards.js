@@ -12,7 +12,7 @@ export function initProjectCards() {
                     return;
                 }
                 
-                window.location.href = 'https://makecore.org';
+                window.open('https://makecore.org', '_blank');
             });
         }
         if (projectTitle === 'Portfolio') {
@@ -23,7 +23,7 @@ export function initProjectCards() {
                     return;
                 }
                 
-                window.location.href = 'https://luleoa12.github.io/portfolio';
+                window.open('https://luleoa12.github.io/portfolio', '_blank');
             });
         }
     });
