@@ -18,10 +18,12 @@
   height: 95px;
   width: 100%;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.2s ease;
   aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .skill-card::before {
@@ -40,6 +42,30 @@
 
 .skill-card:hover::before {
   opacity: 1;
+}
+
+.skill-card:active {
+  transform: scale(1);
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .ripple {
+  background: rgba(128, 128, 128, 0.1);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 
 
