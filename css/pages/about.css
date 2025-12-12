@@ -1,5 +1,4 @@
-
-.hero-card {
+.about-card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +6,7 @@
   padding-top: 150px;
 }
 
-.hero-card__container {
+.about-card__container {
   background: var(--bg-card);
   border: 1.5px solid var(--border);
   border-radius: 18px;
@@ -20,7 +19,7 @@
   width: 100%;
 }
 
-.hero-card__header {
+.about-card__header {
   display: flex;
   margin-top: -20px;
   align-items: center;
@@ -28,18 +27,18 @@
   gap: 1rem;
 }
 
-.hero-card__name {
+.about-card__name {
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.hero-card__icons {
+.about-card__icons {
   display: flex;
   gap: 1.2rem;
 }
 
-.hero-card__icon {
+.about-card__icon {
   background: rgba(255,255,255,0.04);
   border-radius: 12px;
   padding: 0.5rem;
@@ -49,19 +48,19 @@
   transition: background 0.2s;
 }
 
-.hero-card__icon:hover {
+.about-card__icon:hover {
   background: rgba(255,255,255,0.12);
 }
 
-.hero-card__icon svg { stroke: var(--text-primary); }
+.about-card__icon svg { stroke: var(--text-primary); }
 
-[data-theme="dark"] .hero-card__icon { background: rgba(255,255,255,0.04); border: none; }
-[data-theme="dark"] .hero-card__icon:hover { background: rgba(255,255,255,0.12); }
+[data-theme="dark"] .about-card__icon { background: rgba(255,255,255,0.04); border: none; }
+[data-theme="dark"] .about-card__icon:hover { background: rgba(255,255,255,0.12); }
 
-[data-theme="light"] .hero-card__icon, .light-mode .hero-card__icon { background: rgba(0,0,0,0.06); border: none; }
-[data-theme="light"] .hero-card__icon:hover, .light-mode .hero-card__icon:hover { background: rgba(0,0,0,0.12); }
+[data-theme="light"] .about-card__icon, .light-mode .about-card__icon { background: rgba(0,0,0,0.06); border: none; }
+[data-theme="light"] .about-card__icon:hover, .light-mode .about-card__icon:hover { background: rgba(0,0,0,0.12); }
 
-.hero-card__location {
+.about-card__location {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -70,11 +69,11 @@
   margin-top: -25px;
 }
 
-.hero-card__location-text {
+.about-card__location-text {
   color: var(--text-secondary);
 }
 
-.hero-card__desc {
+.about-card__desc {
   font-size: 1.1rem;
   color: var(--text-primary);
   line-height: 1.3;
