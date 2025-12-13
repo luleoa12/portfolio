@@ -10,6 +10,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const originalHeight = safariWindow.offsetHeight;
     const originalOuterHeight = safariOuter.offsetHeight;
+    
+    let modal = null;
+    let svgContainer = null;
+    
+    const updateModalImage = () => {
+        if (!svgContainer) return;
+        
+        const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+        const currentProject = window.location.pathname.includes('makecore') ? 'makecore' : 'portfolio';
+        const svgPath = `/assets/project_img/${currentProject}/${currentProject}_${isDarkMode ? 'dark' : 'light'}.svg`;
+        
+        const svgHTML = `
+            <svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                <image href="${svgPath}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"/>
+            </svg>
+        `;
+        
+        svgContainer.innerHTML = svgHTML;
+        
+        svgContainer.querySelector('image').onerror = function() {
+            console.error('Failed to load SVG image');
+            const fallbackPath = `assets/project_img/${currentProject}/${currentProject}_${isDarkMode ? 'dark' : 'light'}.svg`;
+            this.href.baseVal = fallbackPath;
+        };
+    };
+    
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                if (modal && modal.style.display === 'flex') {
+                    updateModalImage();
+                }
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
 
     redBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -94,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         e.stopPropagation();
         
-        let modal = document.querySelector('.image-modal');
         const isZoomed = !modal || modal.style.display === 'none';
         
         if (isZoomed) {
@@ -110,22 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const imgContainer = document.createElement('div');
                 imgContainer.className = 'modal-image-container';
                 
-                const svgHTML = `
-                    <svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                        <image href="/assets/project_img/makecore/makecore_dark.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"/>
-                    </svg>
-                `;
-                
-                const svgContainer = document.createElement('div');
+                svgContainer = document.createElement('div');
                 svgContainer.className = 'modal-image';
                 svgContainer.style.width = '100%';
                 svgContainer.style.height = '100%';
-                svgContainer.innerHTML = svgHTML;
-                
-                svgContainer.querySelector('image').onerror = function() {
-                    console.error('Failed to load SVG image');
-                    this.href.baseVal = 'assets/project_img/makecore/makecore_dark.svg';
-                };
                 
                 imgContainer.appendChild(svgContainer);
                 
@@ -165,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             modal.style.display = 'flex';
             void modal.offsetWidth;
+            updateModalImage();
             modal.style.opacity = '1';
             document.body.style.overflow = 'hidden';
             this.setAttribute('aria-pressed', 'true');
