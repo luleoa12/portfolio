@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
         const currentProject = window.location.pathname.includes('makecore') ? 'makecore' : 'portfolio';
-        const svgPath = `/assets/project_img/${currentProject}/${currentProject}_${isDarkMode ? 'dark' : 'light'}.svg`;
+        const svgPath = `../assets/project_img/${currentProject}/${currentProject}_${isDarkMode ? 'dark' : 'light'}.svg`;
         
         const svgHTML = `
             <svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
