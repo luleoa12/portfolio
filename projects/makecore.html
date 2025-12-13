@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar" style="padding: 0 !important; margin: 1rem 0 !important;">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">Leo Lu</div>
             <ul class="nav-menu">
@@ -51,7 +51,7 @@
             </div>
         </div>
     </nav>
-    <div class="back-link-container"  style="margin-top: 95px; margin-bottom: -3px;">
+    <div class="back-link-container">
         <a href="../index.html#projects">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="code-editor">
-        <div class="safari-outer" aria-hidden="true" style="width: 800px;">
+        <div class="safari-outer" aria-hidden="true">
             <div class="safari-window">
                 <div class="safari-chrome">
                     <div class="safari-controls">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="safari-content">
-                    <a href="https://makecore.org" target="_blank" style="display: contents;">
+                    <a href="https://makecore.org" target="blank">
                         <img src="../assets/project_img/makecore/makecore_dark.svg" alt="MakeCore Project" class="safari-thumb dark-image">
                         <img src="../assets/project_img/makecore/makecore_light.svg" alt="MakeCore Project" class="safari-thumb light-image">
                     </a>
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="project-container" style="margin-top: -50px;">
+    <div class="project-container">
         <header class="project-header">
                 <h1 class="project-title">MakeCore</h1>
 
@@ -98,7 +98,7 @@
                                 <path d="M21 10H3M16 2V6M8 2V6M7.8 22H16.2C17.8802 22 18.7202 22 19.362 21.673C19.9265 21.3854 20.3854 20.9265 20.673 20.362C21 19.7202 21 18.8802 21 17.2V8.8C21 7.11984 21 6.27976 20.673 5.63803C20.3854 5.07354 19.9265 4.6146 19.362 4.32698C18.7202 4 17.8802 4 16.2 4H7.8C6.11984 4 5.27976 4 4.63803 4.32698C4.07354 4.6146 3.6146 5.07354 3.32698 5.63803C3 6.27976 3 7.11984 3 8.8V17.2C3 18.8802 3 19.7202 3.32698 20.362C3.6146 20.9265 4.07354 21.3854 4.63803 21.673C5.27976 22 6.11984 22 7.8 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <span style="margin-top: -5px;">October 13, 2025</span>
+                        <span>October 13, 2025</span>
                     </div>
 
                     <div class="project-meta">
@@ -108,7 +108,7 @@
                             </a>
                         </div>
                         <div class="icon-text-separator">
-                            <a target="_blank" href="https://makecore.org" aria-label="MakeCore Website" style="color: currentColor;">
+                            <a target="_blank" href="https://makecore.org" aria-label="MakeCore Website" class="website-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" stroke-width="2" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
                                     <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
@@ -128,9 +128,9 @@
                     <span class="tech-tag">Supabase</span>
                 </div>
         </header>
-        <hr style="margin-top: -35px; margin-bottom: 15px;">
+        <hr>
         <div class="project-content">
-            <h3 style="color: var(--accent-warm);">Description</h3>
+            <h3>Description</h3>
             <p class="project-description">
                 MakeCore is a full-stack platform for creating, managing, and showcasing user-made programs, studios, and contests. It combines clean UI/UX with structured community features, including authentication, program tools, and collaborative studio spaces.
 
@@ -140,8 +140,8 @@
             </p>
 
             <div class="project-description">
-                <h3 style="color: var(--accent-warm);">Key Features</h3>
-                <ul class="project-description" style="margin-left: 25px;">
+                <h3>Key Features</h3>
+                <ul class="project-description">
                     <li>Program Creation & Publishing: Tools for building programs with descriptions, thumbnails, versioning, comments, and voting.</li>
                     <li>Studios Collaboration: Role-based member permissions, activity tracking, commenting, and shared program management.</li>
                     <li>MakeJam Contest System: Public leaderboards, submissions, scoring, finalization, and a built-in contest countdown.</li>
@@ -160,6 +160,7 @@
     </footer>
 
 
+<script src="../js/window-controls.js"></script>
 <script type="module" src="../js/main.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETRG6FLYZF"></script>
 <script>
