@@ -1,4 +1,4 @@
-/* Contact */
+
 .contact-content {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
@@ -51,7 +51,7 @@
   flex-direction: column;
   margin-top: -20px;
   gap: 1.2rem;
-  width: 548px;
+  max-width: 548px;
   border-radius: 18px;
 }
 

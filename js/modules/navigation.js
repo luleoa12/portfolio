@@ -2,18 +2,50 @@ export function initNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navMenuClose = document.querySelector('.nav-menu-close');
+    let scrollPosition = 0;
 
     function setNavOpen(isOpen) {
         if (isOpen) {
+            scrollPosition = window.pageYOffset;
+            
             navMenu.classList.add('active');
             hamburger.classList.add('active');
             document.body.classList.add('nav-open');
             hamburger.setAttribute('aria-expanded', 'true');
+            
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.width = '100%';
         } else {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
             document.body.classList.remove('nav-open');
             hamburger.setAttribute('aria-expanded', 'false');
+            
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            
+            if (window.innerWidth <= 768) {
+                const html = document.documentElement;
+                const originalScrollBehavior = html.style.scrollBehavior;
+                html.style.scrollBehavior = 'auto';
+                
+                window.scrollTo(0, scrollPosition);
+                
+                setTimeout(() => {
+                    html.style.scrollBehavior = originalScrollBehavior;
+                }, 10);
+            } else {
+                window.scrollTo(0, scrollPosition);
+            }
+        }
+    }
+
+    function handleResize() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            setNavOpen(false);
         }
     }
 
@@ -30,11 +62,19 @@ export function initNavigation() {
         });
     }
 
+    if (navMenuClose) {
+        navMenuClose.addEventListener('click', () => {
+            setNavOpen(false);
+        });
+    }
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             setNavOpen(false);
         });
     });
+
+    window.addEventListener('resize', handleResize);
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
