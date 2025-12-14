@@ -564,6 +564,7 @@
             
             function showVideoModal() {
                 videoModal.style.display = 'block';
+                introVideo.volume = 0.1;
                 
                 introVideo.play().catch(function(error) {
                 });
@@ -572,6 +573,7 @@
                     if (videoModal.style.display === 'block') {
                         loadingAnimation.style.display = 'none';
                         introVideo.style.display = 'block';
+                        introVideo.volume = 0.1;
                         
                         setTimeout(function() {
                             if (videoModal.style.display === 'block') {
