@@ -516,10 +516,13 @@
             const neverShowAgain = document.getElementById('neverShowAgain');
             
             const neverShowAgainSetting = localStorage.getItem('neverShowIntro');
+            const sessionShown = sessionStorage.getItem('introShownThisSession');
             
-            if (neverShowAgainSetting === 'true') {
+            if (neverShowAgainSetting === 'true' || sessionShown === 'true') {
                 return; 
             }
+            
+            sessionStorage.setItem('introShownThisSession', 'true');
             
             setTimeout(() => {
                 showModal();
@@ -606,7 +609,7 @@
                 }, 500); 
             });
         });
-
+        // localStorage.removeItem('neverShowIntro'); testing purposes
     </script>
 
 </body>
