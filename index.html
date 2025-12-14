@@ -454,6 +454,36 @@
 
     <div class="toast-container" id="toastContainer"></div>
 
+    <div id="introModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to My Portfolio!</h2>
+            <p>Would you like to see a quick intro video?</p>
+            <div class="never-show-again">
+                <input type="checkbox" id="neverShowAgain">
+                <label for="neverShowAgain">Never show again</label>
+            </div>
+            <div class="modal-buttons">
+                <button id="yesBtn" class="modal-btn yes-btn">Yes</button>
+                <button id="noBtn" class="modal-btn no-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="video-modal">
+        <div class="video-container">
+            <div id="loadingAnimation" class="loading-wave">
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+            </div>
+            <video id="introVideo" autoplay playsinline style="display: none;">
+              <source src="assets/video/intro.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETRG6FLYZF"></script>
     <script>
@@ -475,6 +505,108 @@
                 </a>
             `;
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('introModal');
+            const videoModal = document.getElementById('videoModal');
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const introVideo = document.getElementById('introVideo');
+            const loadingAnimation = document.getElementById('loadingAnimation');
+            const neverShowAgain = document.getElementById('neverShowAgain');
+            
+            const neverShowAgainSetting = localStorage.getItem('neverShowIntro');
+            
+            if (neverShowAgainSetting === 'true') {
+                return; 
+            }
+            
+            setTimeout(() => {
+                showModal();
+            }, 500); 
+            
+            yesBtn.addEventListener('click', function() {
+                if (neverShowAgain.checked) {
+                    localStorage.setItem('neverShowIntro', 'true');
+                }
+                hideModal();
+                showVideoModal();
+            });
+            
+            noBtn.addEventListener('click', function() {
+                if (neverShowAgain.checked) {
+                    localStorage.setItem('neverShowIntro', 'true');
+                }
+                hideModal();
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    if (neverShowAgain.checked) {
+                        localStorage.setItem('neverShowIntro', 'true');
+                    }
+                    hideModal();
+                }
+            });
+            
+            function showModal() {
+                modal.style.display = 'block';
+                document.body.classList.add('modal-open');
+            }
+            
+            function hideModal() {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+            
+            function showVideoModal() {
+                videoModal.style.display = 'block';
+                
+                introVideo.play().catch(function(error) {
+                });
+                
+                setTimeout(function() {
+                    if (videoModal.style.display === 'block') {
+                        loadingAnimation.style.display = 'none';
+                        introVideo.style.display = 'block';
+                        
+                        setTimeout(function() {
+                            if (videoModal.style.display === 'block') {
+        
+                                videoModal.classList.add('fade-out');
+                                
+                                setTimeout(function() {
+                                    videoModal.style.display = 'none';
+                                    videoModal.classList.remove('fade-out');
+                                    introVideo.style.display = 'none'; 
+                                    
+                                    introVideo.addEventListener('ended', function() {
+                                        introVideo.style.display = 'block'; 
+                                    }, { once: true });
+                                }, 500); 
+                            }
+                        }, 3800); 
+                    }
+                }, 7200); 
+            }
+            
+            function hideVideoModal() {
+                videoModal.style.display = 'none';
+                introVideo.pause();
+                introVideo.currentTime = 0;
+            }
+            
+            introVideo.addEventListener('ended', function() {
+                videoModal.classList.add('fade-out');
+                
+                setTimeout(function() {
+                    videoModal.style.display = 'none';
+                    videoModal.classList.remove('fade-out');
+                    introVideo.style.display = 'block'; 
+                }, 500); 
+            });
+        });
+
     </script>
 
 </body>
